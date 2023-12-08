@@ -40,7 +40,7 @@ In Harness CI, the following YAML can be used to implement the plugin as a step
                   identifier: drones3artifactsdownload
                   spec:
                     connectorRef: account.harnessImage
-                    image: harnesscommunity/drone-s3-artifacts-download
+                    image: harnesscommunitytest/drone-s3-artifacts-download
                     settings:
                       aws_access_key_id: <+secrets.getValue("awsaccesskeyid")>
                       aws_secret_access_key: <+secrets.getValue("awssecretaccesskey")>

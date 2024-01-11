@@ -1,0 +1,11 @@
+# Use the official AWS CLI Docker image as the base image
+FROM amazon/aws-cli:amd64
+
+# Build go binary for linux/amd64
+RUN env GOOS=linux GOARCH=amd64 go build -o release/linux/amd64/drone-s3-artifacts-download .
+
+# Add the script to /bin
+ADD release/linux/amd64/drone-s3-artifacts-download /bin/
+
+# Entry point for the container
+ENTRYPOINT ["/usr/bin/bash", "-l", "-c", "/bin/drone-s3-artifacts-download"]

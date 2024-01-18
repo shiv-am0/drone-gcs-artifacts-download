@@ -1,5 +1,5 @@
-# Use the official AWS CLI Docker image as the base image
-FROM amazon/aws-cli:amd64
+# Use the official Alpine Docker image as the base image
+FROM alpine:latest
 
 # Add the script to /bin
 ADD release/linux/amd64/drone-s3-artifacts-download /bin/
